@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Connexion à l'Espace Client</h2>
+        
+        <form action="/login" method="POST">
+            <div>
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <p>Pas encore de compte ? <a href="/register">S'inscrire</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Copyright <strong><%= name %></strong>. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

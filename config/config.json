@@ -1,0 +1,15 @@
+{
+    "name": "ClientOMS",
+    "offers": [
+        {
+            "name": "Offer 1",
+            "description": "Description for Offer 1",
+            "price": "€5.00"
+        },
+        {
+            "name": "Offer 2",
+            "description": "Description for Offer 2",
+            "price": "€8.00"
+        }
+    ]
+}

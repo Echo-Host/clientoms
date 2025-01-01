@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fond général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 250px;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Titre principal */
+h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Formulaire de connexion */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+/* Conteneur des champs du formulaire */
+form div {
+    margin-bottom: 20px;
+}
+
+/* Styles des labels */
+label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Styles des inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Styles du bouton */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
