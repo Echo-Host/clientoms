@@ -1,3 +1,35 @@
 - username: testuser
   email: test@admin.com
   password: a
+  ticketsPending: 7      # Nombre de tickets en attente
+  invoicesPaid: 42      # Nombre de factures payées
+  services:
+    - serviceId: 1
+      serviceName: "Hébergement Web"
+      status: "active"
+      startDate: "2024-01-01"
+      endDate: "2025-01-01"
+    - serviceId: 2
+      serviceName: "Bot Discord"
+      status: "active"
+      startDate: "2024-01-01"
+      endDate: "2025-01-01"
+
+- username: user2
+  email: user2@example.com
+  password: password123
+  ticketsPending: 3      # Nombre de tickets en attente
+  invoicesPaid: 10       # Nombre de factures payées
+  services:
+    - serviceId: 3
+      serviceName: "Hébergement Minecraft"
+      status: "inactive"
+      startDate: "2024-05-01"
+      endDate: "2025-05-01"
+
+- username: admin
+  email: admin@example.com
+  password: adminpassword
+  ticketsPending: 0      # Aucun ticket en attente
+  invoicesPaid: 100      # Exemple : 100 factures payées
+  services: []           # Aucun service pour cet utilisateur

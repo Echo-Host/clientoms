@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Ajoute un style personnalisé ici -->
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <h1>Bienvenue, <%= user %></h1>
+            <nav>
+                <ul>
+                    <li><a href="/dashboard">Tableau de Bord</a></li>
+                    <li><a href="/services">Mes Services</a></li>
+                    <li><a href="/support">Support</a></li>
+                    <li><a href="/settings">Paramètres</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <div class="stats-section">
+                <div class="card">
+                    <h2>Services Actifs</h2>
+                    <p id="active-services">Chargement...</p>
+                </div>
+                <div class="card">
+                    <h2>Factures Payées</h2>
+                    <p id="invoices-paid">Chargement...</p>
+                </div>
+                <div class="card">
+                    <h2>Tickets en Attente</h2>
+                    <p id="pending-tickets">Chargement...</p>
+                </div>
+            </div>
+            
+            <script>
+                fetch('/api/stats')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('active-services').textContent = data.totalServices;
+                        document.getElementById('invoices-paid').textContent = data.invoicesPaid;
+                        document.getElementById('pending-tickets').textContent = data.pendingTickets;
+                    })
+                    .catch(error => console.error('Erreur:', error));
+            </script>
+            
+
+            <div class="services-section">
+                <h2>Mes Services Actifs</h2>
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>Nom du Service</th>
+                            <th>Type</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% user.services.forEach(service => { %>
+                            <tr>
+                                <td><%= service.serviceName %></td>
+                                <td><%= service.serviceType %></td>
+                                <td><%= service.status %></td>
+                                <td><a href="/manage/<%= service.serviceId %>" class="btn">Gérer</a></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>© <%= new Date().getFullYear() %> Copyright <strong><%= name %></strong>. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

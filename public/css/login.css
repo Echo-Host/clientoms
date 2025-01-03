@@ -7,8 +7,8 @@
 /* Fond général */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
+    background-color: #1e1e2f; /* Fond sombre violet/noir */
+    color: #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,35 +20,35 @@ body {
 
 /* Titre principal */
 h2 {
-    color: #4CAF50;
+    color: #a58dfa; /* Violet pastel */
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     font-size: 28px;
 }
 
 /* Formulaire de connexion */
 form {
-    background-color: #fff;
+    background-color: #29293d; /* Arrière-plan sombre */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Ombre intense */
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
+    padding: 0 auto;
     font-size: 16px;
 }
 
 /* Conteneur des champs du formulaire */
 form div {
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 /* Styles des labels */
 label {
     font-weight: bold;
-    color: #333;
+    color: #bbb;
     font-size: 14px;
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     display: block;
 }
 
@@ -56,15 +56,16 @@ label {
 input {
     width: 100%;
     padding: 12px;
-    border: 2px solid #ccc;
+    border: 2px solid #555;
     border-radius: 6px;
     font-size: 16px;
-    background-color: #fafafa;
+    background-color: #1e1e2f; /* Fond des inputs */
+    color: #ccc;
     transition: border-color 0.3s ease;
 }
 
 input:focus {
-    border-color: #4CAF50;
+    border-color: #a58dfa; /* Violet pastel */
     outline: none;
 }
 
@@ -72,7 +73,7 @@ input:focus {
 button {
     width: 100%;
     padding: 14px;
-    background-color: #4CAF50;
+    background-color: #6a5acd; /* Bleu violet */
     color: white;
     border: none;
     border-radius: 6px;
@@ -82,17 +83,18 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #7a67e4; /* Plus clair au survol */
 }
 
 p {
     text-align: center;
     font-size: 14px;
-    margin-top: 20px;
+    padding-top: 20px;
+    color: #bbb;
 }
 
 a {
-    color: #4CAF50;
+    color: #a58dfa;
     text-decoration: none;
 }
 
@@ -100,6 +102,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Responsive */
 @media (max-width: 480px) {
     form {
         width: 90%;
@@ -121,7 +124,8 @@ a:hover {
 /* Footer */
 footer {
     margin-top: auto;
-    background-color: #f1f1f1;
+    background-color: #29293d; /* Fond sombre */
+    color: #bbb;
     text-align: center;
     padding: 10px;
     position: relative;

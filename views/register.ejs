@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <h2>Créer un compte</h2>
+    <h2>Inscription - <%= name %></h2>
 
     <form action="/register" method="POST">
         <div>
@@ -32,7 +32,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>© 2025 Copyright <strong><%= name %></strong>. Tous droits réservés.</p>
+            <p>© <%= new Date().getFullYear() %> Copyright <strong><%= name %></strong>. Tous droits réservés.</p>
         </footer>
 </body>
 </html>
