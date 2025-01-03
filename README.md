@@ -1,112 +1,120 @@
 # ClientOMS
 
-ClientOMS is a Node.js-based application designed to manage and streamline operations for client management systems.
+**ClientOMS** est une application Node.js pour la gestion des clients. Ce projet est toujours en développement.
 
 ---
 
-## Table of Contents
-- [Features](#features)
-- [Requirements](#requirements)
+## Table des Matières
+- [Fonctionnalités](#fonctionnalités)
+- [Prérequis](#prérequis)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Scripts](#scripts)
-- [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
+- [Utilisation](#utilisation)
+- [API](#api)
+- [Configuration](#configuration)
+- [Contribuer](#contribuer)
+- [Licence](#licence)
 
 ---
 
-## Features
-- Client management and organization.
-- User-friendly REST API.
-- Scalable architecture with Node.js.
-- Integration-ready for external services.
+## Fonctionnalités
+- Gestion des utilisateurs et des services associés.
+- Connexion et inscription des utilisateurs via une interface simple.
+- API REST pour récupérer des informations sur les utilisateurs, les services, les statistiques, etc.
+- Prise en charge de l'authentification par session.
 
 ---
 
-## Requirements
-- Node.js (v14.x or later recommended)
-- npm (v6.x or later) or Yarn (optional)
+## Prérequis
+- Node.js (version 14.x ou plus récente recommandée)
+- npm (version 6.x ou plus) ou Yarn (optionnel)
+- Fichiers de données `user.yml`, `invoices.yml`, et `tickets.yml` doivent exister dans le répertoire `data`.
 
 ---
 
 ## Installation
 
-1. **Clone the Repository**
+1. **Cloner le Dépôt**
    ```bash
-   git clone https://github.com/your-repo/clientoms.git
+   git clone https://github.com/votre-repo/clientoms.git
    cd clientoms
    ```
 
-2. **Install Dependencies**
+2. **Installer les Dépendances**
    ```bash
    npm install
    ```
 
-3. **Set Up Environment Variables**
-   Create a `.env` file in the root of the project and configure it based on the `.env.example` file provided in the repository:
-   ```
-   PORT=3000
-   DATABASE_URL=your-database-url
-   JWT_SECRET=your-secret-key
+3. **Configurer le fichier `config.json`**
+   Créez un fichier `config.json` à la racine du projet avec la configuration suivante :
+   ```json
+   {
+    "name": "ClientOMS",
+    "offers": [
+        {
+            "name": "Offer 1",
+            "description": "Description for Offer 1",
+            "price": "€5.00"
+        },
+        {
+            "name": "Offer 2",
+            "description": "Description for Offer 2",
+            "price": "€8.00"
+        }
+    ]
+   }
    ```
 
-4. **Start the Application**
+4. **Démarrer l'Application**
    ```bash
    npm start
    ```
 
 ---
 
-## Usage
-Once the application is running, it will be available at `http://localhost:<PORT>` (default port is 3000).
+## Utilisation
+L'application sera accessible à l'adresse suivante : `http://localhost:<PORT>` (le port par défaut est 3000).
 
-### Endpoints
-Refer to the API documentation (if available) or access `/api-docs` if Swagger is integrated.
-
----
-
-## Scripts
-- **Start the Application**:
-  ```bash
-  npm start
-  ```
-- **Run in Development Mode**:
-  ```bash
-  npm run dev
-  ```
-- **Run Tests**:
-  ```bash
-  npm test
-  ```
-- **Lint Code**:
-  ```bash
-  npm run lint
-  ```
+### Pages principales
+- **Page de connexion** : `/`
+- **Page d'inscription** : `/register`
+- **Page des offres** : `/offers`
+- **Tableau de bord** (accès après connexion) : `/dashboard`
 
 ---
 
-## Environment Variables
-The application relies on the following environment variables:
+## API
+L'application expose plusieurs points d'API pour interagir avec les utilisateurs et récupérer des statistiques.
 
-| Variable        | Description                         | Example            |
-|-----------------|-------------------------------------|--------------------|
-| `PORT`          | Port for the server to run on       | `3000`             |
+### Routes API
 
-Ensure these variables are correctly configured before starting the application.
+#### Récupérer les statistiques globales
+- **GET** `/api/stats`
+  - Retourne des statistiques sur le nombre d'utilisateurs, de services, de factures payées et de tickets en attente.
 
----
-
-## Contributing
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/your-feature`.
-3. Make your changes and commit them: `git commit -m 'Add your feature'`.
-4. Push to the branch: `git push origin feature/your-feature`.
-5. Open a pull request.
+#### Récupérer les services d'un utilisateur spécifique
+- **GET** `/api/services/:username`
+  - Retourne la liste des services d'un utilisateur donné.
 
 ---
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Configuration
+
+L'application nécessite un fichier de configuration `config.json` pour définir les paramètres essentiels comme le port, le nom de l'application, et les offres disponibles.
+
+Il est également important de noter que les utilisateurs sont stockés dans un fichier `user.yml`. Ce fichier contient des informations sensibles et **ne doit pas être partagé ou exposé**. Assurez-vous que ce fichier est sécurisé.
+
+---
+
+## Contribuer
+Les contributions sont les bienvenues ! Pour contribuer :
+
+1. Forkez le dépôt.
+2. Créez une nouvelle branche : `git checkout -b feature/votre-fonctionnalité`.
+3. Faites vos modifications et committez-les : `git commit -m 'Ajout de votre fonctionnalité'`.
+4. Poussez votre branche : `git push origin feature/votre-fonctionnalité`.
+5. Ouvrez une pull request.
+
+---
+
+## Licence
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.
